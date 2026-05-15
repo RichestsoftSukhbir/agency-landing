@@ -394,7 +394,11 @@
             <div class="reveal-pin-stage">
                 <div class="reveal-copy-layer">
                     <p class="reveal-kicker mb-0">Scale without the scramble</p>
-                    <h2 class="reveal-scale-text mb-0">RUN YOUR<br>ENTIRE AGENCY</h2>
+                    <h2 class="reveal-scale-text mb-0" aria-label="Run your entire agency">
+                        <span class="reveal-word">RUN YOUR</span>
+                        <span class="reveal-word">ENTIRE</span>
+                        <span class="reveal-word">AGENCY</span>
+                    </h2>
                 </div>
                 <div class="showcase spacer-xl reveal-next-section">
                     <div class="container">
@@ -690,6 +694,7 @@
                 const revealSection = document.querySelector('.section-reveal-wrap');
                 const revealStage = document.querySelector('.reveal-pin-stage');
                 const revealText = document.querySelector('.reveal-scale-text');
+                const revealWords = Array.from(document.querySelectorAll('.reveal-word'));
                 const revealKicker = document.querySelector('.reveal-kicker');
                 const nextSection = document.querySelector('.reveal-next-section');
                 const nextSectionItems = nextSection
@@ -697,28 +702,68 @@
                     : [];
                 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-                if (!revealSection || !revealStage || !revealText || !nextSection || !window.gsap || !window.ScrollTrigger || reduceMotion) {
+                if (!revealSection || !revealStage || !revealText || revealWords.length < 3 || !nextSection || !window.gsap || !window.ScrollTrigger) {
                     return;
                 }
 
                 gsap.registerPlugin(ScrollTrigger);
 
-                const mm = gsap.matchMedia();
+                revealWords.forEach(function (word) {
+                    const wordText = word.textContent.replace(/\s+/g, ' ').trim();
+                    word.innerHTML = wordText
+                        .split('')
+                        .map(function (char) {
+                            return char === ' '
+                                ? '<span class="reveal-space" aria-hidden="true"></span>'
+                                : '<span class="reveal-letter">' + char + '</span>';
+                        })
+                        .join('');
+                });
 
-                mm.add('(min-width: 768px)', function () {
-                    gsap.set(revealText, { scale: 0.78, autoAlpha: 1 });
+                if (reduceMotion) {
+                    gsap.set(revealText, { autoAlpha: 1 });
+                    gsap.set(revealWords[0], { autoAlpha: 1 });
+                    return;
+                }
+
+                const mm = gsap.matchMedia();
+                const firstWord = revealWords[0];
+                const secondWord = revealWords[1];
+                const thirdWord = revealWords[2];
+                const firstLetters = firstWord.querySelectorAll('.reveal-letter');
+                const secondLetters = secondWord.querySelectorAll('.reveal-letter');
+                const thirdLetters = thirdWord.querySelectorAll('.reveal-letter');
+                const allLetters = Array.from(firstLetters).concat(Array.from(secondLetters), Array.from(thirdLetters));
+
+                function buildRevealTimeline(options) {
+                    gsap.set(revealText, { autoAlpha: 1 });
+                    gsap.set(revealWords, {
+                        autoAlpha: 1,
+                        y: 0,
+                        scale: 1
+                    });
+                    gsap.set(revealKicker, {
+                        autoAlpha: 1,
+                        y: 0
+                    });
+                    gsap.set(allLetters, {
+                        autoAlpha: 0,
+                        yPercent: options.letterY,
+                        rotateX: options.letterRotate,
+                        scale: 0.94
+                    });
                     gsap.set(nextSection, {
                         autoAlpha: 0,
-                        scale: 0.92,
-                        clipPath: 'circle(0% at 50% 50%)'
+                        scale: options.sectionStartScale,
+                        clipPath: options.startClip
                     });
-                    gsap.set(nextSectionItems, { autoAlpha: 0, y: 34 });
+                    gsap.set(nextSectionItems, { autoAlpha: 0, y: options.itemY });
 
                     const revealTimeline = gsap.timeline({
                         scrollTrigger: {
                             trigger: revealSection,
                             start: 'top top',
-                            end: '+=230%',
+                            end: options.end,
                             scrub: 1,
                             pin: true,
                             anticipatePin: 1,
@@ -727,76 +772,119 @@
                     });
 
                     revealTimeline
-                        .to(revealText, {
-                            scale: 5.8,
-                            yPercent: -7,
-                            autoAlpha: 0,
-                            ease: 'none'
+                        .to(firstLetters, {
+                            autoAlpha: 1,
+                            yPercent: 0,
+                            rotateX: 0,
+                            scale: 1,
+                            duration: options.letterInDuration,
+                            stagger: options.letterInStagger,
+                            ease: 'power3.out'
                         }, 0)
                         .to(revealKicker, {
-                            y: -34,
+                            y: options.kickerY,
                             autoAlpha: 0,
+                            duration: 0.18,
                             ease: 'none'
-                        }, 0)
+                        }, 0.2)
+                        .to(firstLetters, {
+                            yPercent: -options.letterY,
+                            rotateX: -options.letterRotate,
+                            scale: 0.97,
+                            autoAlpha: 0,
+                            duration: options.letterOutDuration,
+                            stagger: {
+                                each: options.letterOutStagger,
+                                from: 'end'
+                            },
+                            ease: 'power2.inOut'
+                        }, 0.28)
+                        .to(secondLetters, {
+                            yPercent: 0,
+                            rotateX: 0,
+                            scale: 1,
+                            autoAlpha: 1,
+                            duration: options.letterInDuration,
+                            stagger: options.letterInStagger,
+                            ease: 'power3.out'
+                        }, 0.38)
+                        .to(secondLetters, {
+                            yPercent: -options.letterY,
+                            rotateX: -options.letterRotate,
+                            scale: 0.97,
+                            autoAlpha: 0,
+                            duration: options.letterOutDuration,
+                            stagger: {
+                                each: options.letterOutStagger,
+                                from: 'end'
+                            },
+                            ease: 'power2.inOut'
+                        }, 0.6)
+                        .to(thirdLetters, {
+                            yPercent: 0,
+                            rotateX: 0,
+                            scale: 1,
+                            autoAlpha: 1,
+                            duration: options.letterInDuration,
+                            stagger: options.letterInStagger,
+                            ease: 'power3.out'
+                        }, 0.7)
+                        .to(thirdWord, {
+                            scale: options.wordZoom,
+                            autoAlpha: 0,
+                            duration: 0.32,
+                            ease: 'none'
+                        }, 0.96)
                         .to(nextSection, {
                             autoAlpha: 1,
                             scale: 1,
-                            clipPath: 'circle(145% at 50% 50%)',
+                            clipPath: options.endClip,
+                            duration: 0.32,
                             ease: 'none'
-                        }, 0.34)
+                        }, 0.98)
                         .to(nextSectionItems, {
                             autoAlpha: 1,
                             y: 0,
+                            duration: 0.2,
                             stagger: 0.035,
                             ease: 'power2.out'
-                        }, 0.58);
+                        }, 1.12);
+                }
+
+                mm.add('(min-width: 768px)', function () {
+                    buildRevealTimeline({
+                        end: '+=320%',
+                        itemY: 34,
+                        kickerY: -34,
+                        wordZoom: 6.2,
+                        sectionStartScale: 0.92,
+                        startClip: 'circle(0% at 50% 50%)',
+                        endClip: 'circle(145% at 50% 50%)',
+                        letterY: 42,
+                        letterRotate: -16,
+                        letterInDuration: 0.16,
+                        letterOutDuration: 0.14,
+                        letterInStagger: 0.018,
+                        letterOutStagger: 0.012
+                    });
                 });
 
                 mm.add('(max-width: 767.98px)', function () {
-                    gsap.set(revealText, { scale: 0.72, autoAlpha: 1 });
-                    gsap.set(nextSection, {
-                        autoAlpha: 0,
-                        scale: 0.94,
-                        clipPath: 'circle(0% at 50% 48%)'
+                    buildRevealTimeline({
+                        end: '+=300%',
+                        itemY: 26,
+                        kickerY: -24,
+                        wordZoom: 5,
+                        sectionStartScale: 0.94,
+                        startClip: 'circle(0% at 50% 48%)',
+                        endClip: 'circle(150% at 50% 48%)',
+                        letterY: 34,
+                        letterRotate: -12,
+                        letterInDuration: 0.15,
+                        letterOutDuration: 0.13,
+                        letterInStagger: 0.016,
+                        letterOutStagger: 0.01
                     });
-                    gsap.set(nextSectionItems, { autoAlpha: 0, y: 26 });
-
-                    const revealTimeline = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: revealSection,
-                            start: 'top top',
-                            end: '+=210%',
-                            scrub: 1,
-                            pin: true,
-                            anticipatePin: 1,
-                            invalidateOnRefresh: true
-                        }
-                    });
-
-                    revealTimeline
-                        .to(revealText, {
-                            scale: 4.4,
-                            yPercent: -5,
-                            autoAlpha: 0,
-                            ease: 'none'
-                        }, 0)
-                        .to(revealKicker, {
-                            y: -24,
-                            autoAlpha: 0,
-                            ease: 'none'
-                        }, 0)
-                        .to(nextSection, {
-                            autoAlpha: 1,
-                            scale: 1,
-                            clipPath: 'circle(150% at 50% 48%)',
-                            ease: 'none'
-                        }, 0.34)
-                        .to(nextSectionItems, {
-                            autoAlpha: 1,
-                            y: 0,
-                            stagger: 0.035,
-                            ease: 'power2.out'
-                        }, 0.58);
                 });
             }
 

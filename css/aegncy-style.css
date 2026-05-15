@@ -977,14 +977,39 @@ a,
 }
 
 .reveal-scale-text {
+    display: grid;
+    place-items: center;
+    width: min(92vw, 1200px);
+    min-height: clamp(4rem, 13vw, 11.5rem);
     max-width: 1200px;
     color: #20242b;
     font-size: clamp(3.2rem, 13vw, 11.5rem);
     font-weight: 900;
     line-height: 0.86;
     letter-spacing: 0;
+    perspective: 900px;
     transform-origin: center center;
     will-change: transform, opacity;
+}
+
+.reveal-word {
+    grid-area: 1 / 1;
+    display: block;
+    white-space: nowrap;
+    opacity: 0;
+    transform-origin: center center;
+    will-change: transform, opacity;
+}
+
+.reveal-letter {
+    display: inline-block;
+    transform-origin: center bottom;
+    will-change: transform, opacity;
+}
+
+.reveal-space {
+    display: inline-block;
+    width: 0.26em;
 }
 
 .reveal-next-section {
@@ -1059,6 +1084,7 @@ a,
 
     .reveal-scale-text {
         font-size: clamp(3.6rem, 18vw, 8rem);
+        min-height: clamp(4.2rem, 18vw, 8rem);
     }
 
     .showcase-content {
@@ -1078,5 +1104,6 @@ a,
 
     .reveal-scale-text {
         font-size: clamp(3.2rem, 20vw, 5.8rem);
+        min-height: clamp(3.8rem, 20vw, 5.8rem);
     }
 }
