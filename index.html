@@ -1735,9 +1735,35 @@
 
                 gsap.registerPlugin(ScrollTrigger);
 
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                 const headingItems = section.querySelectorAll('.feature-grid-kicker, .feature-grid-heading h2');
-                const cards = section.querySelectorAll('.feature-grid-card');
-                const mediaImages = section.querySelectorAll('.feature-grid-media img');
+                const cards = Array.from(section.querySelectorAll('.feature-grid-card'));
+
+                if (reduceMotion) {
+                    gsap.set(headingItems, { clearProps: 'all' });
+                    gsap.set(cards, { clearProps: 'all' });
+                    section.style.removeProperty('--feature-grid-orb-opacity');
+                    section.style.removeProperty('--feature-grid-orb-x');
+                    section.style.removeProperty('--feature-grid-orb-y');
+                    return;
+                }
+
+                gsap.fromTo(section, {
+                    '--feature-grid-orb-opacity': 0.12,
+                    '--feature-grid-orb-x': '-16%',
+                    '--feature-grid-orb-y': '10%'
+                }, {
+                    '--feature-grid-orb-opacity': 0.38,
+                    '--feature-grid-orb-x': '6%',
+                    '--feature-grid-orb-y': '-4%',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.2
+                    }
+                });
 
                 gsap.from(headingItems, {
                     y: 26,
@@ -1752,29 +1778,83 @@
                     }
                 });
 
-                gsap.from(cards, {
-                    y: 44,
-                    autoAlpha: 0,
-                    duration: 0.78,
-                    stagger: 0.12,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top 72%',
-                        once: true
-                    }
-                });
+                cards.forEach(function (card, index) {
+                    const media = card.querySelector('.feature-grid-media');
+                    const image = card.querySelector('.feature-grid-media img');
+                    const body = card.querySelector('.feature-grid-body');
+                    const copyBits = card.querySelectorAll('.feature-grid-copy > *, .feature-grid-arrow');
+                    const direction = index % 2 === 0 ? -1 : 1;
 
-                mediaImages.forEach(function (image) {
-                    gsap.to(image, {
-                        yPercent: -5,
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 82%',
+                            once: true
+                        }
+                    })
+                        .from(card, {
+                            x: 44 * direction,
+                            y: 54,
+                            rotate: 2.5 * direction,
+                            autoAlpha: 0,
+                            duration: 0.86,
+                            ease: 'power3.out'
+                        })
+                        .from(media, {
+                            y: 22,
+                            autoAlpha: 0,
+                            duration: 0.58,
+                            ease: 'power2.out'
+                        }, 0.08)
+                        .from(image, {
+                            scale: 1.14,
+                            yPercent: 8,
+                            duration: 1,
+                            ease: 'power2.out'
+                        }, 0.02)
+                        .from(body, {
+                            y: 16,
+                            autoAlpha: 0,
+                            duration: 0.54,
+                            ease: 'power2.out'
+                        }, 0.22)
+                        .from(copyBits, {
+                            y: 18,
+                            autoAlpha: 0,
+                            duration: 0.46,
+                            stagger: 0.07,
+                            ease: 'power2.out'
+                        }, 0.3);
+
+                    gsap.to(card, {
+                        yPercent: -3,
                         ease: 'none',
                         scrollTrigger: {
-                            trigger: image,
+                            trigger: card,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 1.1
+                        }
+                    });
+
+                    gsap.to(image, {
+                        yPercent: -7,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: card,
                             start: 'top bottom',
                             end: 'bottom top',
                             scrub: 1
                         }
+                    });
+
+                    gsap.to(card.querySelector('.feature-grid-arrow'), {
+                        y: -4,
+                        repeat: -1,
+                        yoyo: true,
+                        duration: 1.4,
+                        ease: 'sine.inOut',
+                        delay: index * 0.12
                     });
                 });
             }
