@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Agency Rankyfy Landing</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+
+    <!-- AgencyStylesheet -->
+    <link rel="stylesheet" href="./css/aegncy-style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navigation py-2">
+            <div class="container">
+                <div class="nav-wrap d-flex justify-content-between align-items-center">
+                    <div class="item-left">
+                        <a href="/" class="logo"><img src="./images/agency-img/logo.png" alt="">
+                            <span class="fw-semibold">
+                                <!-- Rankyfy -->
+                                Agency
+                                <!-- <span class="fst-italic font-serif fw-medium primary-text"></span> -->
+                            </span>
+                        </a>
+                    </div>
+                    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"
+                        aria-controls="primary-menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div class="item-center" id="primary-menu">
+                        <ul class="menu list-unstyled m-0 p-0">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li class="has-child mega-menu">
+                                <button class="nav-link-button" type="button" aria-expanded="false">
+                                    Services
+                                    <i data-lucide="chevron-down"></i>
+                                </button>
+                                <div class="sub-menu" aria-label="Services menu">
+                                    <div class="mega-menu-wrap">
+                                        <div class="mega-menu-panel">
+                                            <div class="mega-menu-column mega-menu-main">
+                                                <p class="mega-menu-label">Workspace</p>
+                                                <a href="" class="mega-card is-featured">
+                                                    <span class="mega-icon"><i
+                                                            data-lucide="layout-dashboard"></i></span>
+                                                    <span>
+                                                        <strong>Dashboard</strong>
+                                                        <small>Track agency activity, performance, and daily
+                                                            priorities.</small>
+                                                    </span>
+                                                </a>
+                                                <a href="" class="mega-card">
+                                                    <span class="mega-icon"><i data-lucide="building-2"></i></span>
+                                                    <span>
+                                                        <strong>Agency</strong>
+                                                        <small>Manage agency profile, operations, and workspace
+                                                            settings.</small>
+                                                    </span>
+                                                </a>
+                                                <a href="" class="mega-card">
+                                                    <span class="mega-icon"><i
+                                                            data-lucide="briefcase-business"></i></span>
+                                                    <span>
+                                                        <strong>Clients</strong>
+                                                        <small>Organize accounts, contacts, deliverables, and
+                                                            relationships.</small>
+                                                    </span>
+                                                </a>
+                                                <a href="" class="mega-card">
+                                                    <span class="mega-icon"><i data-lucide="folders"></i></span>
+                                                    <span>
+                                                        <strong>Projects</strong>
+                                                        <small>Plan client work, assign ownership, and monitor
+                                                            progress.</small>
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <div class="mega-menu-column mega-menu-premium">
+                                                <p class="mega-menu-label">Operations</p>
+                                                <a href="" class="mega-card compact-card">
+                                                    <span class="mega-icon"><i
+                                                            data-lucide="square-check-big"></i></span>
+                                                    <span>
+                                                        <strong>Tasks</strong>
+                                                        <small>Create assignments, set priorities, and keep delivery
+                                                            moving.</small>
+                                                    </span>
+                                                </a>
+                                                <a href="" class="mega-card compact-card">
+                                                    <span class="mega-icon"><i data-lucide="users"></i></span>
+                                                    <span>
+                                                        <strong>Team</strong>
+                                                        <small>Coordinate members, roles, workloads, and
+                                                            collaboration.</small>
+                                                    </span>
+                                                </a>
+                                                <a href="" class="mega-card compact-card">
+                                                    <span class="mega-icon"><i data-lucide="user-plus"></i></span>
+                                                    <span>
+                                                        <strong>Leads</strong>
+                                                        <small>Capture prospects, qualify opportunities, and follow up
+                                                            faster.</small>
+                                                    </span>
+                                                </a>
+                                                <a href="" class="mega-card compact-card">
+                                                    <span class="mega-icon"><i data-lucide="workflow"></i></span>
+                                                    <span>
+                                                        <strong>Workflow</strong>
+                                                        <small>Automate repeatable agency processes and approval
+                                                            paths.</small>
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <div class="mega-menu-column mega-menu-solutions">
+                                                <p class="mega-menu-label">Management</p>
+                                                <a href=""><i data-lucide="file-input"></i> Lead Forms</a>
+                                                <a href=""><i data-lucide="trending-up"></i> Sales</a>
+                                                <a href=""><i data-lucide="bar-chart-3"></i> Report</a>
+                                                <a href=""><i data-lucide="shield-check"></i> Roles & Permissions</a>
+                                                <a href=""><i data-lucide="settings"></i> Settings</a>
+                                                <a href="" class="all-solutions">Open Agency Hub <i
+                                                        data-lucide="arrow-right"></i></a>
+                                            </div>
+
+                                            <div class="mega-menu-footer">
+                                                <div class="mega-footer-copy">
+                                                    <span class="mega-footer-icon"><i
+                                                            data-lucide="circle-user-round"></i></span>
+                                                    <span><strong>Super Admin</strong> Full owner access for managing
+                                                        the
+                                                        complete agency workspace.</span>
+                                                </div>
+                                                <a href="" class="button button-outline">Go to Dashboard</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="">Pricing</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="item-right">
+                        <a href="" class="button button-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="spacer-xl hero">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-9 text-center mx-auto">
+                        <h1 class="mb-3 fw-bold split-text">Manage Your Entire Agency From One Dashboard
+                        </h1>
+                        <p class="text-md mb-4 line-fill-text">Track projects, monitor SEO performance, manage leads, automate workflows, assign teams, and deliver reports — without switching between tools.
+                        </p>
+                        <a href="" class="button button-primary">
+                            Free 14-Day Trial
+                        </a>
+                    </div>
+                </div>
+                <img src="./images/agency-img/agency-hero.png" class="hero-scroll-image" alt="">
+            </div>
+        </section>
+        <section class="logo-slider py-4">
+            <div class="swiper continues-slider">
+                <div class="slider-track swiper-wrapper">
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_Bonafide.svg" alt="">
+                    </div>
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_Clickslice.svg" alt="">
+                    </div>
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_Clix.svg" alt="">
+                    </div>
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_Delmain.svg" alt="">
+                    </div>
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_Globital.svg" alt="">
+                    </div>
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_Kitemedia.svg" alt="">
+                    </div>
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_Longhouse.svg" alt="">
+                    </div>
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_Softline.svg" alt="">
+                    </div>
+                    <div class="slider-logo swiper-slide">
+                        <img src="./images/agency-img/Property_1_THemodernfirm.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="spacer-xl metrics-section">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3 fw-bold split-text">Rankyfy Agency powers 7000+ marketing agencies to prove ROI,
+                            retain clients, and eliminate reporting chaos</h2>
+                        <p class="mb-4 text-md line-fill-text">For 4+ years, we’ve been the intelligence layer behind 7,000+
+                            marketing agencies. Rankyfy AI doesn’t just automate reports—it uncovers the insights that
+                            change how agencies win and keep clients.
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="counter-wrap">
+                            <div class="counter-block">
+                                <span class="counter-kicker">Efficiency</span>
+                                <div class="counter-number h3 fw-bold">
+                                    <span class="counter-prefix"></span><span class="counter-value" data-target="75"
+                                        data-suffix="%">0</span><span class="counter-suffix">%</span>
+                                </div>
+                                <p class="mb-0">less time spent building reports</p>
+                            </div>
+                            <div class="counter-block">
+                                <span class="counter-kicker">Cost Savings</span>
+                                <div class="counter-number h3 fw-bold">
+                                    <span class="counter-prefix">$</span><span class="counter-value" data-target="78"
+                                        data-prefix="$" data-suffix="K">0</span><span class="counter-suffix">K</span>
+                                </div>
+                                <p class="mb-0">in non-billable costs saved every year</p>
+                            </div>
+                            <div class="counter-block">
+                                <span class="counter-kicker">Traffic Growth</span>
+                                <div class="counter-number h3 fw-bold">
+                                    <span class="counter-prefix"></span><span class="counter-value" data-target="270"
+                                        data-suffix="%">0</span><span class="counter-suffix">%</span>
+                                </div>
+                                <p class="mb-0">average traffic increase</p>
+                            </div>
+                            <div class="counter-block">
+                                <span class="counter-kicker">Control</span>
+                                <div class="counter-number h3 fw-bold">
+                                    <span class="counter-prefix"></span><span class="counter-value"
+                                        data-target="10">0</span><span class="counter-suffix"></span>
+                                </div>
+                                <p class="mb-0">place for every client report</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="spacer-xl platform-section">
+            <div class="container">
+                <div class="row g-4 align-items-center mb-50">
+                    <div class="col-xxl-5 col-lg-6 platform-copy">
+                        <h2 class="fw-bold mb-3 split-text">One Platform. Every Agency Operation.</h2>
+                        <p class="text-md mb-3 line-fill-text">Stop juggling spreadsheets, CRMs, SEO tools, reporting apps, and project managers.</p>
+                        <p class="text-md mb-4 line-fill-text">Rankyfy combines everything into a single agency operating system designed to help teams scale faster and stay organized.</p>
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <div class="icon-card">
+                                    <div class="icon-card-img mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.5" d="M3.5 9.5v9c0 .466 0 .699.076.883a1 1 0 0 0 .541.54C4.301 20 4.534 20 5 20s.699 0 .883-.076a1 1 0 0 0 .54-.541c.077-.184.077-.417.077-.883v-9c0-.466 0-.699-.076-.883a1 1 0 0 0-.541-.54C5.699 8 5.466 8 5 8s-.699 0-.883.076a1 1 0 0 0-.54.541c-.077.184-.077.417-.077.883Zm7-4v13c0 .465 0 .698.076.882a1 1 0 0 0 .541.541c.184.077.417.077.883.077s.699 0 .883-.077a1 1 0 0 0 .54-.54c.077-.185.077-.418.077-.883v-13c0-.466 0-.699-.076-.883a1 1 0 0 0-.541-.54C12.699 4 12.466 4 12 4s-.699 0-.883.076a1 1 0 0 0-.54.541c-.077.184-.077.417-.077.883Zm7 7v6c0 .466 0 .699.076.883a1 1 0 0 0 .541.54c.184.077.417.077.883.077s.699 0 .883-.076a1 1 0 0 0 .54-.541c.077-.184.077-.417.077-.883v-6c0-.466 0-.699-.076-.883a1 1 0 0 0-.541-.54C19.699 11 19.466 11 19 11s-.699 0-.883.076a1 1 0 0 0-.54.541c-.077.184-.077.417-.077.883Z"/></svg>
+                                    </div>
+                                    <h3 class="fw-bold text-sm mb-2">AI-Powered Insights</h3>
+                                    <p class="mb-0 text-sm">Ask AI to analyze your data and uncover what matters most-instantly.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="icon-card">
+                                    <div class="icon-card-img mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.5 18a3.5 3.5 0 1 1-7 0m10.731 0H4.77a1.769 1.769 0 0 1-1.25-3.02l.602-.603A3 3 0 0 0 5 12.256V9.5a7 7 0 0 1 14 0v2.756a3 3 0 0 0 .879 2.121l.603.603a1.77 1.77 0 0 1-1.25 3.02"/></svg>
+                                    </div>
+                                    <h3 class="fw-bold text-sm mb-2">Proactive Alerts</h3>
+                                    <p class="mb-0 text-sm">Get notified about issues before your clients even notice them.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="icon-card">
+                                    <div class="icon-card-img mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7a4 4 0 1 1-8 0a4 4 0 0 1 8 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a4 4 0 0 0 0-8"/><path stroke-linejoin="round" d="M11 14H7a5 5 0 0 0-5 5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2a5 5 0 0 0-5-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M17 14a5 5 0 0 1 5 5a2 2 0 0 1-2 2h-1.5"/></g></svg>
+                                    </div>
+                                    <h3 class="fw-bold text-sm mb-2">Client-First Experience</h3>
+                                    <p class="mb-0 text-sm">Beautiful dashboards and branded reports that build trust and transparency.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 col-lg-6">
+                        <div class="platform-visual">
+                            <img src="./images/agency-img/platform-image.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3">
+                        <div class="platform-card">
+                            <div class="platform-img">
+                                <img src="./images/agency-img/plat-img-1.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="platform-content">
+                                <h3 class="h6 fw-semibold mb-2">Automated Reporting</h3>
+                                <div class="d-flex align-items-end gap-2 justify-content-between">
+                                    <p class="mb-0 text-sm">
+                                        Create stunning, automated reports in seconds and deliver them on autopilot.
+                                    </p>
+                                    <a href="" class="button button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M16.5 7.5L6 18"/><path stroke-linejoin="round" d="M8 6.188s8.048-.679 9.27.543c1.22 1.221.542 9.269.542 9.269"/></g></svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="platform-card">
+                            <div class="platform-img">
+                                <img src="./images/agency-img/plat-img-2.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="platform-content">
+                                <h3 class="h6 fw-semibold mb-2">Workflow Automation</h3>
+                                <div class="d-flex align-items-end gap-2 justify-content-between">
+                                    <p class="mb-0 text-sm">
+                                        Streamline your processes with smart workflows that save time and reduce manual work.
+                                    </p>
+                                    <a href="" class="button button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M16.5 7.5L6 18"/><path stroke-linejoin="round" d="M8 6.188s8.048-.679 9.27.543c1.22 1.221.542 9.269.542 9.269"/></g></svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="platform-card">
+                            <div class="platform-img">
+                                <img src="./images/agency-img/plat-img-3.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="platform-content">
+                                <h3 class="h6 fw-semibold mb-2">Powerful Integrations</h3>
+                                <div class="d-flex align-items-end gap-2 justify-content-between">
+                                    <p class="mb-0 text-sm">
+                                        Connect with the tools you already use and keep all your data in one place.
+                                    </p>
+                                    <a href="" class="button button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M16.5 7.5L6 18"/><path stroke-linejoin="round" d="M8 6.188s8.048-.679 9.27.543c1.22 1.221.542 9.269.542 9.269"/></g></svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="platform-card">
+                            <div class="platform-img">
+                                <img src="./images/agency-img/plat-img-4.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="platform-content">
+                                <h3 class="h6 fw-semibold mb-2">Seamless Communication</h3>
+                                <div class="d-flex align-items-end gap-2 justify-content-between">
+                                    <p class="mb-0 text-sm">
+                                        Chat, comment, and collaborate directly within the platform—no more email chaos.
+                                    </p>
+                                    <a href="" class="button button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M16.5 7.5L6 18"/><path stroke-linejoin="round" d="M8 6.188s8.048-.679 9.27.543c1.22 1.221.542 9.269.542 9.269"/></g></svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-reveal-wrap spacer-xl">
+            <div class="container">
+                <p class="mb-0">RUN YOUR ENTIRE AGENCY</p>
+            </div>
+        </section>
+        <section class="showcase spacer-xl">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="showcase-content">
+                            new section
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="showcase-media">
+                            section image
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script>
+
+        // Initialize a new Lenis instance for smooth scrolling
+        const lenis = new Lenis();
+
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+        });
+
+        // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+        gsap.ticker.lagSmoothing(0);
+
+        window.addEventListener('DOMContentLoaded', function () {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            const header = document.querySelector('.header');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuPanel = document.querySelector('.item-center');
+            const megaMenu = document.querySelector('.mega-menu');
+            const servicesButton = document.querySelector('.nav-link-button');
+            const subMenu = document.querySelector('.sub-menu');
+            const megaCards = Array.from(document.querySelectorAll('.mega-card, .mega-menu-solutions a, .mega-menu-footer'));
+            const mobileMegaItems = Array.from(subMenu.querySelectorAll('.mega-menu-label, .mega-card, .mega-menu-solutions a, .mega-menu-footer'));
+            const isDesktop = window.matchMedia('(min-width: 992px)');
+            let menuOpen = false;
+            let mobileServicesOpen = false;
+            let desktopTimeline;
+            let mobileTimeline;
+            let mobileServicesTimeline;
+            let closeMegaTimer;
+
+            function createDesktopTimeline() {
+                if (!window.gsap) return null;
+
+                return gsap.timeline({
+                    paused: true,
+                    defaults: { ease: 'power3.out' }
+                })
+                    .set(subMenu, { display: 'block', pointerEvents: 'auto' })
+                    .fromTo(subMenu,
+                        { autoAlpha: 0, y: 18, scale: 0.985, transformOrigin: 'top center' },
+                        { autoAlpha: 1, y: 0, scale: 1, duration: 0.34 }
+                    )
+                    .fromTo(megaCards,
+                        { autoAlpha: 0, y: 12 },
+                        { autoAlpha: 1, y: 0, duration: 0.28, stagger: 0.035 },
+                        '-=0.18'
+                    );
+            }
+
+            function openMega() {
+                clearTimeout(closeMegaTimer);
+                if (!isDesktop.matches || menuOpen) return;
+                menuOpen = true;
+                megaMenu.classList.add('is-open');
+                servicesButton.setAttribute('aria-expanded', 'true');
+
+                if (desktopTimeline) {
+                    desktopTimeline.play(0);
+                } else {
+                    subMenu.style.display = 'block';
+                    subMenu.style.opacity = '1';
+                    subMenu.style.visibility = 'visible';
+                }
+            }
+
+            function closeMega() {
+                clearTimeout(closeMegaTimer);
+                if (!isDesktop.matches || !menuOpen) return;
+                menuOpen = false;
+                megaMenu.classList.remove('is-open');
+                servicesButton.setAttribute('aria-expanded', 'false');
+
+                if (desktopTimeline) {
+                    desktopTimeline.reverse();
+                } else {
+                    subMenu.style.display = '';
+                    subMenu.style.opacity = '';
+                    subMenu.style.visibility = '';
+                }
+            }
+
+            function scheduleCloseMega() {
+                clearTimeout(closeMegaTimer);
+                closeMegaTimer = setTimeout(closeMega, 180);
+            }
+
+            function keepMegaOpen() {
+                clearTimeout(closeMegaTimer);
+                openMega();
+            }
+
+            function initPlatformSection() {
+                const platformSection = document.querySelector('.platform-section');
+
+                if (!platformSection || !window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    return;
+                }
+
+                if (window.ScrollTrigger) {
+                    gsap.registerPlugin(ScrollTrigger);
+                }
+
+                const platformVisual = platformSection.querySelector('.platform-visual');
+                const platformVisualImage = platformSection.querySelector('.platform-visual img');
+                const introItems = platformSection.querySelectorAll('.platform-copy > h2, .platform-copy > p, .icon-card');
+                const platformCards = Array.from(platformSection.querySelectorAll('.platform-card'));
+                const hoverTargets = Array.from(platformSection.querySelectorAll('.icon-card, .platform-card'));
+                const desktopPointer = window.matchMedia('(min-width: 992px)');
+                const entranceConfig = {
+                    defaults: {
+                        ease: 'power3.out'
+                    }
+                };
+
+                if (window.ScrollTrigger) {
+                    entranceConfig.scrollTrigger = {
+                        trigger: platformSection,
+                        start: 'top 72%',
+                        once: true
+                    };
+                }
+
+                gsap.timeline(entranceConfig)
+                    .to(platformSection, {
+                        '--platform-sheen-opacity': 1,
+                        '--platform-sheen-x': '0%',
+                        duration: 1.1
+                    }, 0)
+                    .from(introItems, {
+                        autoAlpha: 0,
+                        y: 28,
+                        duration: 0.64,
+                        stagger: 0.08
+                    }, 0)
+                    .from(platformVisual, {
+                        autoAlpha: 0,
+                        y: 42,
+                        scale: 0.96,
+                        rotationX: 7,
+                        duration: 0.9
+                    }, 0.18)
+                    .from(platformCards, {
+                        autoAlpha: 0,
+                        y: 44,
+                        scale: 0.95,
+                        duration: 0.68,
+                        stagger: 0.09
+                    }, 0.42);
+
+                if (platformVisualImage) {
+                    gsap.to(platformVisualImage, {
+                        y: -10,
+                        duration: 3.2,
+                        repeat: -1,
+                        yoyo: true,
+                        ease: 'sine.inOut'
+                    });
+                }
+
+                if (window.ScrollTrigger && platformVisual) {
+                    gsap.to(platformVisual, {
+                        yPercent: -4,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: platformSection,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 1.1
+                        }
+                    });
+                }
+
+                if (platformVisual) {
+                    platformSection.addEventListener('pointermove', function (event) {
+                        if (!desktopPointer.matches) return;
+
+                        const bounds = platformSection.getBoundingClientRect();
+                        const x = ((event.clientX - bounds.left) / bounds.width) - 0.5;
+                        const y = ((event.clientY - bounds.top) / bounds.height) - 0.5;
+
+                        gsap.to(platformVisual, {
+                            x: x * 18,
+                            rotationY: x * 5,
+                            rotationX: y * -4,
+                            duration: 0.6,
+                            ease: 'power3.out'
+                        });
+                    });
+
+                    platformSection.addEventListener('pointerleave', function () {
+                        gsap.to(platformVisual, {
+                            x: 0,
+                            rotationY: 0,
+                            rotationX: 0,
+                            duration: 0.7,
+                            ease: 'power3.out'
+                        });
+                    });
+                }
+
+                hoverTargets.forEach(function (target) {
+                    const image = target.querySelector('.platform-img img');
+                    const icon = target.querySelector('.icon-card-img');
+                    const button = target.querySelector('.button-icon');
+                    const isPlatformCard = target.classList.contains('platform-card');
+
+                    target.addEventListener('pointerenter', function () {
+                        gsap.to(target, {
+                            y: -8,
+                            scale: 1.02,
+                            duration: 0.34,
+                            ease: 'power3.out'
+                        });
+
+                        if (image) {
+                            gsap.to(image, { scale: 1.08, duration: 0.5, ease: 'power3.out' });
+                        }
+
+                        if (icon) {
+                            gsap.to(icon, { y: -4, scale: 1.1, rotation: -6, duration: 0.34, ease: 'back.out(2)' });
+                        }
+
+                        if (button) {
+                            gsap.to(button, { scale: 1.08, rotation: 45, duration: 0.34, ease: 'back.out(2)' });
+                        }
+                    });
+
+                    target.addEventListener('pointerleave', function () {
+                        gsap.to(target, {
+                            y: 0,
+                            scale: 1,
+                            duration: 0.38,
+                            ease: 'power3.out'
+                        });
+
+                        if (image) {
+                            gsap.to(image, { scale: 1, duration: 0.48, ease: 'power3.out' });
+                        }
+
+                        if (icon) {
+                            gsap.to(icon, { y: 0, scale: 1, rotation: 0, duration: 0.34, ease: 'power3.out' });
+                        }
+
+                        if (button) {
+                            gsap.to(button, { scale: 1, rotation: 0, duration: 0.34, ease: 'power3.out' });
+                        }
+                    });
+                });
+            }
+
+            function openMobileMenu() {
+                menuToggle.classList.add('is-open');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuPanel.classList.add('is-open');
+                document.body.classList.add('menu-active');
+
+                if (mobileTimeline) {
+                    mobileTimeline.play(0);
+                }
+            }
+
+            function closeMobileMenu() {
+                menuToggle.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-active');
+
+                if (mobileServicesOpen) {
+                    closeMobileServices(true);
+                }
+
+                if (mobileTimeline) {
+                    mobileTimeline.reverse();
+                } else {
+                    menuPanel.classList.remove('is-open');
+                }
+            }
+
+            function setupMobileTimeline() {
+                if (!window.gsap) return;
+
+                gsap.set(menuPanel, { autoAlpha: 0, y: -10 });
+                gsap.set('.menu > li', { autoAlpha: 0, y: 10 });
+
+                mobileTimeline = gsap.timeline({
+                    paused: true,
+                    defaults: { ease: 'power3.out' },
+                    onReverseComplete: function () {
+                        menuPanel.classList.remove('is-open');
+                    }
+                })
+                    .set(menuPanel, { display: 'block' })
+                    .to(menuPanel, { autoAlpha: 1, y: 0, duration: 0.24 })
+                    .to('.menu > li', { autoAlpha: 1, y: 0, duration: 0.22, stagger: 0.045 }, '-=0.08');
+            }
+
+            function setupMobileServicesTimeline() {
+                if (!window.gsap) return;
+
+                gsap.set(subMenu, { display: 'none', height: 0, autoAlpha: 0, overflow: 'hidden' });
+                gsap.set(mobileMegaItems, { autoAlpha: 1, y: 0, clearProps: 'transform' });
+
+                mobileServicesTimeline = gsap.timeline({
+                    paused: true,
+                    defaults: { ease: 'power3.out' },
+                    onReverseComplete: function () {
+                        gsap.set(subMenu, { display: 'none' });
+                    }
+                })
+                    .set(subMenu, { display: 'block', overflow: 'hidden' })
+                    .fromTo(subMenu,
+                        { height: 0, autoAlpha: 0 },
+                        { height: 'auto', autoAlpha: 1, duration: 0.34 }
+                    )
+                    .fromTo(mobileMegaItems,
+                        { autoAlpha: 0, y: 10 },
+                        { autoAlpha: 1, y: 0, duration: 0.24, stagger: 0.025 },
+                        '-=0.14'
+                    );
+            }
+
+            function openMobileServices() {
+                if (isDesktop.matches || mobileServicesOpen) return;
+
+                mobileServicesOpen = true;
+                megaMenu.classList.add('is-open');
+                servicesButton.setAttribute('aria-expanded', 'true');
+
+                if (mobileServicesTimeline) {
+                    mobileServicesTimeline.play(0);
+                } else {
+                    subMenu.style.display = 'block';
+                    subMenu.style.height = 'auto';
+                    subMenu.style.opacity = '1';
+                    subMenu.style.visibility = 'visible';
+                }
+            }
+
+            function closeMobileServices(skipAnimation) {
+                if (isDesktop.matches || !mobileServicesOpen) return;
+
+                mobileServicesOpen = false;
+                megaMenu.classList.remove('is-open');
+                servicesButton.setAttribute('aria-expanded', 'false');
+
+                if (mobileServicesTimeline && !skipAnimation) {
+                    mobileServicesTimeline.reverse();
+                } else if (mobileServicesTimeline) {
+                    mobileServicesTimeline.progress(0).pause();
+                    gsap.set(subMenu, { display: 'none', height: 0, autoAlpha: 0 });
+                    gsap.set(mobileMegaItems, { autoAlpha: 1, y: 0, clearProps: 'transform' });
+                } else {
+                    subMenu.style.display = '';
+                    subMenu.style.height = '';
+                    subMenu.style.opacity = '';
+                    subMenu.style.visibility = '';
+                }
+            }
+
+            function resetForViewport() {
+                clearTimeout(closeMegaTimer);
+                menuOpen = false;
+                mobileServicesOpen = false;
+                servicesButton.setAttribute('aria-expanded', 'false');
+                megaMenu.classList.remove('is-open');
+
+                if (isDesktop.matches) {
+                    if (mobileTimeline) mobileTimeline.kill();
+                    mobileTimeline = null;
+                    if (mobileServicesTimeline) mobileServicesTimeline.kill();
+                    mobileServicesTimeline = null;
+                    menuPanel.classList.remove('is-open');
+                    menuToggle.classList.remove('is-open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.classList.remove('menu-active');
+                    gsap.set(menuPanel, { clearProps: 'all' });
+                    gsap.set('.menu > li', { clearProps: 'all' });
+                    gsap.set(megaCards, { clearProps: 'all' });
+                    gsap.set(mobileMegaItems, { clearProps: 'all' });
+                    gsap.set(subMenu, { autoAlpha: 0, display: 'none', clearProps: 'transform' });
+                    desktopTimeline = createDesktopTimeline();
+                } else {
+                    if (desktopTimeline) desktopTimeline.kill();
+                    desktopTimeline = null;
+                    if (mobileTimeline) mobileTimeline.kill();
+                    if (mobileServicesTimeline) mobileServicesTimeline.kill();
+                    mobileServicesTimeline = null;
+                    gsap.set(megaCards, { clearProps: 'all' });
+                    gsap.set(mobileMegaItems, { clearProps: 'all' });
+                    gsap.set(subMenu, { clearProps: 'all' });
+                    setupMobileTimeline();
+                    setupMobileServicesTimeline();
+                }
+            }
+
+            if (window.gsap) {
+                if (window.ScrollTrigger) {
+                    gsap.registerPlugin(ScrollTrigger);
+                }
+
+                gsap.from('.nav-wrap', { autoAlpha: 0, y: -16, duration: 0.55, ease: 'power3.out' });
+
+                if (window.ScrollTrigger) {
+                    gsap.fromTo('.hero-scroll-image',
+                        { scale: 0.7, y: 0, autoAlpha: 0.7 },
+                        {
+                            scale: 1,
+                            y: 0,
+                            autoAlpha: 1,
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: '.hero-scroll-image',
+                                start: 'top 92%',
+                                end: 'top 70%',
+                                scrub: 0.35,
+                                invalidateOnRefresh: true
+                            }
+                        }
+                    );
+
+                    const counterValues = gsap.utils.toArray('.counter-value');
+                    const counterCards = gsap.utils.toArray('.counter-block');
+
+                    if (counterCards.length) {
+                        gsap.from(counterCards, {
+                            y: 28,
+                            autoAlpha: 0,
+                            duration: 0.6,
+                            ease: 'power3.out',
+                            stagger: 0.12,
+                            scrollTrigger: {
+                                trigger: '.counter-wrap',
+                                start: 'top 82%',
+                                once: true
+                            }
+                        });
+                    }
+
+                    counterValues.forEach(function (counter) {
+                        const target = Number(counter.dataset.target || 0);
+                        const decimals = Number(counter.dataset.decimals || 0);
+                        const valueState = { value: 0 };
+
+                        gsap.to(valueState, {
+                            value: target,
+                            duration: 1.6,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: counter,
+                                start: 'top 88%',
+                                once: true
+                            },
+                            onUpdate: function () {
+                                const currentValue = decimals > 0
+                                    ? valueState.value.toFixed(decimals)
+                                    : Math.round(valueState.value).toString();
+
+                                counter.textContent = currentValue;
+                            }
+                        });
+                    });
+                }
+
+                resetForViewport();
+                isDesktop.addEventListener('change', resetForViewport);
+            }
+
+            megaMenu.addEventListener('mouseenter', keepMegaOpen);
+            megaMenu.addEventListener('mouseleave', scheduleCloseMega);
+            subMenu.addEventListener('mouseenter', keepMegaOpen);
+            subMenu.addEventListener('mouseleave', scheduleCloseMega);
+            servicesButton.addEventListener('focus', openMega);
+            header.addEventListener('focusout', function (event) {
+                if (isDesktop.matches && !header.contains(event.relatedTarget)) {
+                    closeMega();
+                }
+            });
+
+            servicesButton.addEventListener('click', function () {
+                if (isDesktop.matches) {
+                    menuOpen ? closeMega() : openMega();
+                } else {
+                    mobileServicesOpen ? closeMobileServices() : openMobileServices();
+                }
+            });
+
+            menuToggle.addEventListener('click', function () {
+                menuPanel.classList.contains('is-open') ? closeMobileMenu() : openMobileMenu();
+            });
+
+            document.addEventListener('click', function (event) {
+                if (isDesktop.matches && menuOpen && !megaMenu.contains(event.target)) {
+                    closeMega();
+                }
+
+                if (!isDesktop.matches && menuPanel.classList.contains('is-open') && !header.contains(event.target)) {
+                    closeMobileMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    closeMega();
+                    closeMobileMenu();
+                }
+            });
+
+            initPlatformSection();
+        });
+    </script>
+    <script>
+        const splitText = document.querySelectorAll(".split-text");
+        splitText.forEach(text => {
+            if (text && window.gsap && window.ScrollTrigger) {
+                gsap.registerPlugin(ScrollTrigger);
+
+                const normalizedText = text.textContent.replace(/\s+/g, " ").trim();
+
+                text.innerHTML = normalizedText
+                    .split(" ")
+                    .map(word => `<span class="word">${word}</span>`)
+                    .join(" ");
+
+                const words = text.querySelectorAll(".word");
+
+                gsap.to(words, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power3.out",
+                    stagger: 0.08,
+                    scrollTrigger: {
+                        trigger: text,
+                        start: "top 85%",
+                        once: true,
+                    },
+                });
+            }
+        });
+
+        const lineFillText = document.querySelectorAll(".line-fill-text");
+
+        function escapeHTML(value) {
+            return value
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function splitElementIntoLines(text) {
+            const normalizedText = text.textContent.replace(/\s+/g, " ").trim();
+
+            text.innerHTML = normalizedText
+                .split(" ")
+                .map(word => `<span class="line-fill-word">${escapeHTML(word)}</span>`)
+                .join(" ");
+
+            const words = Array.from(text.querySelectorAll(".line-fill-word"));
+            const lines = [];
+
+            words.forEach(word => {
+                const top = word.offsetTop;
+                const currentLine = lines[lines.length - 1];
+
+                if (!currentLine || Math.abs(currentLine.top - top) > 2) {
+                    lines.push({ top, words: [word] });
+                } else {
+                    currentLine.words.push(word);
+                }
+            });
+
+            text.innerHTML = lines
+                .map(line => {
+                    const lineText = line.words.map(word => word.textContent).join(" ");
+                    return `<span class="line-fill-line">${escapeHTML(lineText)}</span>`;
+                })
+                .join("");
+
+            return text.querySelectorAll(".line-fill-line");
+        }
+
+        lineFillText.forEach(text => {
+            if (text && window.gsap && window.ScrollTrigger) {
+                gsap.registerPlugin(ScrollTrigger);
+
+                const lines = splitElementIntoLines(text);
+
+                gsap.to(lines, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.72,
+                    ease: "power2.out",
+                    stagger: 0.16,
+                    scrollTrigger: {
+                        trigger: text,
+                        start: "top 82%",
+                        once: true,
+                    },
+                });
+            }
+        });
+    </script>
+    <script>
+        const swiper = new Swiper('.continues-slider', {
+            loop: true,
+            slidesPerView: 7,
+            spaceBetween: 40,
+            speed: 3000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            }
+        });
+    </script>
+
+</body>
+
+</html>
