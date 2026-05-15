@@ -390,25 +390,36 @@
                 </div>
             </div>
         </section>
-        <section class="section-reveal-wrap spacer-xl">
-            <div class="container">
-                <p class="mb-0">RUN YOUR ENTIRE AGENCY</p>
-            </div>
-        </section>
-        <section class="showcase spacer-xl">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="showcase-content">
-                            new section
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="showcase-media">
-                            section image
+        <section class="section-reveal-wrap" aria-label="Agency reveal">
+            <div class="reveal-pin-stage">
+                <div class="reveal-copy-layer">
+                    <p class="reveal-kicker mb-0">Scale without the scramble</p>
+                    <h2 class="reveal-scale-text mb-0">RUN YOUR<br>ENTIRE AGENCY</h2>
+                </div>
+                <div class="showcase spacer-xl reveal-next-section">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-6">
+                                <div class="showcase-content">
+                                    <span class="showcase-label">Agency command center</span>
+                                    <h2 class="fw-bold mb-3">Every client, project, report, and team update revealed in one workspace.</h2>
+                                    <p class="text-md mb-4">As the headline expands, this next section rises from the same center point, then becomes the next scrollable screen.</p>
+                                    <a href="" class="button button-primary">Explore Platform</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="showcase-media">
+                                    <img src="./images/agency-img/platform-image.png" alt="Agency dashboard preview">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="spacer-xl">
+            <div class="container">
+                
             </div>
         </section>
     </main>
@@ -675,6 +686,120 @@
                 });
             }
 
+            function initRevealTextSection() {
+                const revealSection = document.querySelector('.section-reveal-wrap');
+                const revealStage = document.querySelector('.reveal-pin-stage');
+                const revealText = document.querySelector('.reveal-scale-text');
+                const revealKicker = document.querySelector('.reveal-kicker');
+                const nextSection = document.querySelector('.reveal-next-section');
+                const nextSectionItems = nextSection
+                    ? nextSection.querySelectorAll('.showcase-label, .showcase-content h2, .showcase-content p, .showcase-content .button, .showcase-media')
+                    : [];
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                if (!revealSection || !revealStage || !revealText || !nextSection || !window.gsap || !window.ScrollTrigger || reduceMotion) {
+                    return;
+                }
+
+                gsap.registerPlugin(ScrollTrigger);
+
+                const mm = gsap.matchMedia();
+
+                mm.add('(min-width: 768px)', function () {
+                    gsap.set(revealText, { scale: 0.78, autoAlpha: 1 });
+                    gsap.set(nextSection, {
+                        autoAlpha: 0,
+                        scale: 0.92,
+                        clipPath: 'circle(0% at 50% 50%)'
+                    });
+                    gsap.set(nextSectionItems, { autoAlpha: 0, y: 34 });
+
+                    const revealTimeline = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: revealSection,
+                            start: 'top top',
+                            end: '+=230%',
+                            scrub: 1,
+                            pin: true,
+                            anticipatePin: 1,
+                            invalidateOnRefresh: true
+                        }
+                    });
+
+                    revealTimeline
+                        .to(revealText, {
+                            scale: 5.8,
+                            yPercent: -7,
+                            autoAlpha: 0,
+                            ease: 'none'
+                        }, 0)
+                        .to(revealKicker, {
+                            y: -34,
+                            autoAlpha: 0,
+                            ease: 'none'
+                        }, 0)
+                        .to(nextSection, {
+                            autoAlpha: 1,
+                            scale: 1,
+                            clipPath: 'circle(145% at 50% 50%)',
+                            ease: 'none'
+                        }, 0.34)
+                        .to(nextSectionItems, {
+                            autoAlpha: 1,
+                            y: 0,
+                            stagger: 0.035,
+                            ease: 'power2.out'
+                        }, 0.58);
+                });
+
+                mm.add('(max-width: 767.98px)', function () {
+                    gsap.set(revealText, { scale: 0.72, autoAlpha: 1 });
+                    gsap.set(nextSection, {
+                        autoAlpha: 0,
+                        scale: 0.94,
+                        clipPath: 'circle(0% at 50% 48%)'
+                    });
+                    gsap.set(nextSectionItems, { autoAlpha: 0, y: 26 });
+
+                    const revealTimeline = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: revealSection,
+                            start: 'top top',
+                            end: '+=210%',
+                            scrub: 1,
+                            pin: true,
+                            anticipatePin: 1,
+                            invalidateOnRefresh: true
+                        }
+                    });
+
+                    revealTimeline
+                        .to(revealText, {
+                            scale: 4.4,
+                            yPercent: -5,
+                            autoAlpha: 0,
+                            ease: 'none'
+                        }, 0)
+                        .to(revealKicker, {
+                            y: -24,
+                            autoAlpha: 0,
+                            ease: 'none'
+                        }, 0)
+                        .to(nextSection, {
+                            autoAlpha: 1,
+                            scale: 1,
+                            clipPath: 'circle(150% at 50% 48%)',
+                            ease: 'none'
+                        }, 0.34)
+                        .to(nextSectionItems, {
+                            autoAlpha: 1,
+                            y: 0,
+                            stagger: 0.035,
+                            ease: 'power2.out'
+                        }, 0.58);
+                });
+            }
+
             function openMobileMenu() {
                 menuToggle.classList.add('is-open');
                 menuToggle.setAttribute('aria-expanded', 'true');
@@ -932,6 +1057,7 @@
             });
 
             initPlatformSection();
+            initRevealTextSection();
         });
     </script>
     <script>
