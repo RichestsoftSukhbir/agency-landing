@@ -1102,7 +1102,7 @@ a,
     }
 
     .reveal-next-section.spacer-xl {
-        padding-block: 84px 44px;
+        padding-block: 104px 44px;
     }
 
     .reveal-scale-text {
@@ -1143,7 +1143,7 @@ a,
     }
 
     .showcase-media img {
-        max-height: 31svh;
+        /* max-height: 31svh; */
         object-fit: cover;
         object-position: top center;
     }
@@ -1543,7 +1543,7 @@ a,
     }
 
     .sticky-feature-block[data-feature="5"]::before {
-        background-image: url("../images/agency-img/feature-9.webp");
+        background-image: url("../images/agency-img/feature-6.webp");
     }
 
     .sticky-feature-block[data-feature="6"]::before {
